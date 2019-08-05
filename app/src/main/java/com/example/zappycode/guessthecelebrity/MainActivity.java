@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         protected Bitmap doInBackground(String... urls) {
             try {
 
-                URL url = new URL(urls[0]);
+                URL url = new URL(urls[0]); //creates a url object to connect to a given url.
 
                 HttpURLConnection connection = (HttpURLConnection) url.openConnection();
                 connection.connect();
@@ -84,11 +84,20 @@ public class MainActivity extends AppCompatActivity {
 
                 InputStream in = urlConnection.getInputStream();
 
-                InputStreamReader reader = new InputStreamReader(in);
+                InputStreamReader reader = new InputStreamReader(in);// reader using read() method
+                // will put the str in the stream till it is read by the reader
 
-                int data = reader.read();
+                int data = reader.read(); //This method returns an integer value
+                // (which is the integer value of the character in the ascii table)
+                // read from the stream. It can range from 0 to 65535.
+                // Else it returns -1 if no character has been read.
 
-                while (data != -1) {
+                while (data != -1) { //Everything in the ascii table has its
+                                    // decimal (number) value and the
+                                    // character (letter) value. Computers can only
+                                    // understand numbers, so an ASCII code is the
+                                    // numerical representation of a character
+                                    // such as 'a' or '@' or an action of some sort.
                     char current = (char) data;
                     result += current;
                     data = reader.read();
