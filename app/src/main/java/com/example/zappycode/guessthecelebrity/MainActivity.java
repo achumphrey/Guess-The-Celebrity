@@ -98,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
                                     // understand numbers, so an ASCII code is the
                                     // numerical representation of a character
                                     // such as 'a' or '@' or an action of some sort.
-                    char current = (char) data;
+                    char current = (char) data; //converts from number to letter
                     result += current;
                     data = reader.read();
                 }
